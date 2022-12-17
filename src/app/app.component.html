@@ -1,4 +1,18 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<cdk-virtual-scroll-viewport #scroller class="list" [itemSize]="10">
+  <table mat-table [dataSource]="listItems" class="mattable">
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef class="col-sm">No.</th>
+      <td mat-cell *matCellDef="let element" class="col-sm">
+        {{ element.id }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+  </table>
+</cdk-virtual-scroll-viewport>
