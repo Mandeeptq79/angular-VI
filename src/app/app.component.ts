@@ -53,7 +53,6 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    //this.rows = of(this.listItems);
     const range =
       Math.ceil(this.gridHeight / this.rowHeight) + AppComponent.BUFFER_SIZE;
     this.scrollStrategy.setScrollHeight(this.rowHeight, this.headerHeight);
