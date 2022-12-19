@@ -53,12 +53,13 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.rows = of(this.listItems);
+    //this.rows = of(this.listItems);
     const range =
       Math.ceil(this.gridHeight / this.rowHeight) + AppComponent.BUFFER_SIZE;
     this.scrollStrategy.setScrollHeight(this.rowHeight, this.headerHeight);
     this.fetchMore();
     console.log(this.listItems);
+    this.rows = of(this.listItems);
     console.log(this.rows);
     this.dataSource = combineLatest([
       this.rows,
