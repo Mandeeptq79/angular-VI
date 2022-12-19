@@ -1,5 +1,5 @@
 <cdk-virtual-scroll-viewport #scroller class="list" [itemSize]="10">
-  <table mat-table [dataSource]="listItems" class="mattable">
+  <table mat-table [dataSource]="dataSource" class="mattable">
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 
